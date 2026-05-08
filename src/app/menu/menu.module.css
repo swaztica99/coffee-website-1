@@ -1,0 +1,259 @@
+.menuPage {
+    background-color: #4C4137;
+    min-height: 100vh;
+    color: white;
+    padding: 40px 20px;
+}
+
+.simpleNav {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backBtn {
+    color: #8c7851;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.backBtn:hover {
+    color: #c7ab74;
+}
+
+.menuLogo {
+    letter-spacing: 4px;
+    font-size: 1.2rem;
+}
+
+.menuContainer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menuHeader {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.menuHeader span {
+    color: #8c7851;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menuHeader h2 {
+    font-size: 3.5rem;
+    font-family: serif;
+}
+
+.categorySection {
+    margin-bottom: 80px;
+}
+
+.categoryTitle {
+    color: #8c7851;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(140, 120, 81, 0.3);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.productCard {
+    cursor: pointer;
+}
+
+.imageBox {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.imageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.overlay p {
+    border: 1px solid white;
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.productCard:hover .overlay {
+    opacity: 1;
+}
+
+.productCard:hover img {
+    transform: scale(1.1);
+}
+
+.info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-family: serif;
+}
+
+.info p {
+    color: #8c7851;
+    font-weight: bold;
+}
+
+/* MODAL STYLING (Hampir sama dengan globals/page.module) */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modalContent {
+    background: #4C4137;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modalImage {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modalImage img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.modalText {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modalText span {
+    color: #8c7851;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.modalText h2 {
+    font-size: 2.2rem;
+    font-family: serif;
+    margin-bottom: 15px;
+}
+
+.modalText p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modalPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.orderBtn {
+    background: #8c7851;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+.menuFooter {
+    text-align: center;
+    margin-top: 100px;
+    opacity: 0.3;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .modalGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .modalText {
+        padding: 30px;
+    }
+
+    .menuHeader h2 {
+        font-size: 2.5rem;
+    }
+}
