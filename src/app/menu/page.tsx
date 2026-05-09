@@ -97,7 +97,6 @@ export default function MenuPage() {
                                     <h2>{selectedProduct.name}</h2>
                                     <p>{selectedProduct.desc}</p>
                                     <div className={styles.modalPrice}>{selectedProduct.price}</div>
-                                    <button className={styles.orderBtn}>Add to Order</button>
                                 </div>
                             </div>
                         </motion.div>
@@ -105,8 +104,57 @@ export default function MenuPage() {
                 )}
             </AnimatePresence>
 
-            <footer className={styles.menuFooter}>
-                <p>© 2026 CULTURA COFFEE ROASTERS</p>
+            <footer className={styles.footerSection}>
+                <div className={styles.footerContainer}>
+                    {/* Garis Pembatas Atas - Tidak Full (Sejajar Konten) */}
+                    <div className={styles.footerLine}></div>
+
+                    <div className={styles.footerGrid}>
+                        {/* Kolom 1: Brand/Logo */}
+                        <div className={styles.footerBrand}>
+                            <h2 className={styles.footerLogo}>CULTURA</h2>
+                            <p className={styles.footerDesc}>
+                                Menyatukan seni seduhan kopi dengan ruang yang menghidupkan koneksi.
+                                Nikmati setiap detik jeda di Cultura.
+                            </p>
+                        </div>
+
+                        {/* Kolom 2: Navigasi Cepat */}
+                        <div className={styles.footerLinks}>
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><Link href="/">Beranda</Link></li>
+                                <li><a href="/#story">Our Story</a></li>
+                                <li><Link href="/menu">Menu</Link></li>
+                                <li><a href="/#gallery">Gallery</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Kolom 3: Media Sosial */}
+                        <div className={styles.footerLinks}>
+                            <h4>Social</h4>
+                            <ul>
+                                <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                                <li><a href="https://x.com" target="_blank">Twitter (X)</a></li>
+                                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                                <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Kolom 4: Alamat Singkat */}
+                        <div className={styles.footerLinks}>
+                            <h4>Contact</h4>
+                            <p className={styles.footerContactInfo}>hello@cultura.co</p>
+                            <p className={styles.footerContactInfo}>+62 21 1234 5678</p>
+                            <p className={styles.footerContactInfo}>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+
+                    {/* Copyright */}
+                    <div className={styles.copyrightArea}>
+                        <p>© 2026 CULTURA COFFEE ROASTERS. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
             </footer>
         </main>
     );

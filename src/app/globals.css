@@ -6,6 +6,7 @@ body {
   background-color: #E6D5BC;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: background-color 0.5s ease;
   /* Penting untuk auto scroll halus */
 }
 

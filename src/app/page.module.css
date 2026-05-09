@@ -653,111 +653,101 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  padding: 20px;
+  padding: 40px;
 }
 
 .modalContent {
   background: #4C4137;
-  /* Warna gelap senada contentSection */
   width: 100%;
-  max-width: 800px;
-  border-radius: 20px;
+  max-width: 850px;
+  /* Lebar maksimal di monitor besar */
+  max-height: 85vh;
+  /* Tinggi maksimal 85% layar */
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
 }
 
 .modalImage {
   width: 100%;
-  /* Memaksa container menjadi persegi sempurna */
+  height: 100%;
   aspect-ratio: 1 / 1;
-  background: rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /* Memastikan gambar tidak keluar dari kotak */
 }
 
 .modalImage img {
   width: 100%;
   height: 100%;
-  /* Kunci utama agar gambar tetap proporsional dalam kotak persegi */
   object-fit: cover;
-  display: block;
 }
 
 .closeBtn {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: none;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 10;
-  opacity: 0.6;
+  z-index: 110;
 }
 
 .modalGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Membagi 50-50 antara gambar dan teks */
-  align-items: stretch;
-  /* Memastikan tinggi teks mengikuti tinggi gambar persegi */
+  /* 2 Kolom di Desktop */
+  width: 100%;
+  height: 100%;
 }
 
 .modalText {
-  padding: 40px;
+  padding: 45px;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Teks tetap berada di tengah secara vertikal */
+  overflow-y: auto;
+  /* Scroll jika teks kepanjangan di laptop kecil */
 }
 
 .modalText span {
   color: #8c7851;
-  text-transform: uppercase;
   font-size: 0.7rem;
+  text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
 .modalText h2 {
-  color: white;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-family: serif;
-  font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .modalText p {
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 25px;
 }
 
 .modalPrice {
   font-size: 1.5rem;
-  color: white;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-
-.orderBtn {
-  background: #8c7851;
-  color: white;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  cursor: pointer;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -785,19 +775,45 @@
     /* Pastikan wrapper tidak memberikan ruang kosong berlebih di HP */
     margin-top: -30vw;
   }
-}
 
-.modalGrid {
-  grid-template-columns: 1fr;
-}
+  .modalGrid {
+    grid-template-columns: 1fr;
+    /* Menjadi satu kolom (gambar di atas, teks di bawah) */
+  }
 
-.modalText {
-  padding: 30px;
-}
+  .modalContent {
+    max-width: 450px;
+    max-height: 85vh;
+    overflow-y: auto;
+    /* Aktifkan scroll di seluruh box pada HP */
+  }
 
-.modalImage {
-  aspect-ratio: 1 / 1;
-  /* Tetap persegi di HP */
+  .modalImage {
+    aspect-ratio: 1 / 1;
+    height: 300px;
+  }
+
+  .modalText {
+    padding: 25px;
+    justify-content: flex-start;
+  }
+
+  .modalText h2 {
+    font-size: 1.8rem;
+  }
+
+  .highlightGrid,
+  .galleryGrid,
+  .locationGrid,
+  .storyGrid,
+  .footerGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .storyImage {
+    aspect-ratio: 1/1;
+  }
 }
 
 .locationSection {

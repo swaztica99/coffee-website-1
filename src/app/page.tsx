@@ -25,14 +25,14 @@ export default function Home() {
 
   const navOpacity = useTransform(
     scrollYProgress,
-    [0, 0.01, 1.0], // Input: Awal, Muncul Penuh, Akhir Halaman
-    [0, 1, 1]       // Output: Transparan, Solid, Tetap Solid
+    [0, 0.01, 1.0],
+    [0, 1, 1]
   );
   const navYRange = isMobile ? [0, 0.02, 1] : [0, 0.005, 1];
   const navY = useTransform(
     scrollYProgress,
-    [0, 0.1, 1.0],  // Input: Awal, Posisi Normal, Akhir Halaman
-    [-50, 0, 0]      // Output: Di atas layar, Posisi Tengah, Tetap di Tengah
+    [0, 0.1, 1.0],
+    [-50, 0, 0]
   );
 
   const burgerLine1 = { closed: { rotate: 0, y: 0 }, open: { rotate: 45, y: 7 } };
@@ -342,7 +342,7 @@ export default function Home() {
                 <div className={styles.modalImage}><img src={selectedProduct.img} alt={selectedProduct.name} /></div>
                 <div className={styles.modalText}>
                   <span>Special Brew</span><h2>{selectedProduct.name}</h2><p>{selectedProduct.desc}</p>
-                  <div className={styles.modalPrice}>{selectedProduct.price}</div><button className={styles.orderBtn}>Add to Order</button>
+                  <div className={styles.modalPrice}>{selectedProduct.price}</div>
                 </div>
               </div>
             </motion.div>
