@@ -23,6 +23,10 @@ export default function Home() {
   const moveLeft = useTransform(scrollYProgress, [0, 0.1], ["0%", "-100%"]);
   const moveRight = useTransform(scrollYProgress, [0, 0.1], ["0%", "100%"]);
 
+  const meetLeft = useTransform(scrollYProgress, [0.2, 0.4], ["-50%", "0%"]);
+  const meetRight = useTransform(scrollYProgress, [0.2, 0.4], ["50%", "0%"]);
+  const handsOpacity = useTransform(scrollYProgress, [0.2, 0.35], [0, 0.4]);
+
   const navOpacity = useTransform(
     scrollYProgress,
     [0, 0.01, 1.0],
@@ -160,7 +164,17 @@ export default function Home() {
       <section className={styles.contentSection}>
         <div className={styles.storyContainer}>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className={styles.intro}>
-            <h2>Cultura</h2>
+            <div className={styles.culturaWrapper}>
+              <img src="/left-hand-hero1.png" className={styles.bgHandLeft} alt="Hand Left" />
+              <img src="/right-hand-hero1.png" className={styles.bgHandRight} alt="Hand Right" />
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                Cultura
+              </motion.h2>
+            </div>
             <p>Membangun koneksi dari seduhan kopi.</p>
           </motion.div>
 
