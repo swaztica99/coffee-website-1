@@ -169,6 +169,8 @@
 
   .intro h2 {
     font-size: 6rem;
+    position: relative;
+    left: -5%;
   }
 
   .bgHandLeft,
